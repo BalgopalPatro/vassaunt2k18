@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105685571-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-105685571-3');
+</script>
+
+  <meta charset="utf-8">
+  <title>Events</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style-modal.css">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style-events.css" rel="stylesheet">
+  <link href="css/w3.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <main id="main">
+
+    <div class="w3-container">
+      <button onclick="resetInformation();" class="w3-button w3-green w3-large">Reset Information</button>
+
+      <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+      <div class="w3-center"><br>
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+        <h3 style="width:100%" class="w3-margin-top w3-center" id="nameOfEvent">Event Name</h3>
+      </div>
+          <form class="w3-container" id="eventRegistration" autocomplete="on">
+            <div class="w3-section">
+              <label><b>Name</b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter name" id="name" required>
+              <label><b>College</b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter college" id="college" required>
+              <label><b>Email ID</b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="email" placeholder="Enter email" id="email" required>
+              <label><b>Number</b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="number" placeholder="Enter number" id="number">
+<!--               <label><b>Do You need accomodation?</b></label>
+              <input class="w3-radio" type="radio" name="check" value="yes" checked>
+              <label>Yes</label>
+              <input class="w3-radio" type="radio" name="check" value="no" >
+              <label>No</label> -->
+              <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit"  onclick="registerEvent();">Register</button>
+            </div>
+          </form>
+          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-container" >
+      <div class="modal-background">
+        <div class="modal">
+          <h1 id="event-name" style="margin-bottom: 30px;">Event  Name</h1>
+          <p id="event-description" style="text-align: center;">Event Description.</p><br>
+          <p id="rules" style="text-align: left;">Rules :</p>
+          <p id="event-rules" style="text-align: left;">Event Rules.</p><br>
+          <!--        <h2><a id="facebook-link" href="https://www.facebook.com/vassaunt">More Details</a></h2> -->
+          <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+            <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+          </svg>
+        </div>
+        <h2><a id="facebook-link"  onclick="registrationModal();">Register</a></h2>
+      </div>
+    </div>
+    <!--==========================
+      Portfolio Section
+      ============================-->
+      <section id="portfolio"  class="section-bg" >
+        <div class="container">
+
+          <header class="section-header">
+            <h3 class="section-title">Events</h3>
+          </header>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <ul id="portfolio-flters">
+                <li data-filter="*" class="filter-active">All</li>
+                <li data-filter=".filter-art">Art & Photography</li>
+                <li data-filter=".filter-audiovisual">Audio Visual</li>
+                <li data-filter=".filter-dramatics">Dramatics</li>
+                <li data-filter=".filter-literary">Literary</li>
+                <li data-filter=".filter-music">Music & Dance</li>
+                <li data-filter=".filter-quiz">Quiz</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row portfolio-container">
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-art wow fadeInUp">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/art_artdom.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/art_artdom.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('0');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a>Artistdom</a></h4>
+                  <p>On Spot Painting</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-literary wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/literaryonline.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/literaryonline.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('9');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >POETRY PARK</a></h4>
+                  <p>Online</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-art wow fadeInUp" data-wow-delay="0.2s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/a.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/a.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('1');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >Art-o- Face</a></h4>
+                  <p>Face Painting</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-dramatics wow fadeInUp">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/v.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/v.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('26');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >VINES MAKING</a></h4>
+                  <p>Online</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-literary wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/literaryonline.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/literaryonline.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('10');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >MUSINGS MAGIK</a></h4>
+                  <p>Online</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-art wow fadeInUp" data-wow-delay="0.2s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/graphia_art.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/graphia_art.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('3');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >Graphiá</a></h4>
+                  <p>Poster Designing Competition</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-dramatics wow fadeInUp">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/s.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/s.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('25');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >Script Writing</a></h4>
+                  <p>Online</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-art wow fadeInUp">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/s.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/s.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a   class="link-details button" id="one" onclick="modalDataAllEvents('2');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >Stan Leenious</a></h4>
+                  <p>Creating a Comic Strip</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-dramatics wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/s.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/s.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('24');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >STORY TELLING</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-art wow fadeInUp" data-wow-delay="0.2s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/s.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/s.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('8');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >Slippery Carver</a></h4>
+                  <p>Soap Sculpting</p>
+                </div>
+              </div>
+            </div>  
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-literary wow fadeInUp" data-wow-delay="0.2s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/literaryonline.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/literaryonline.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('11');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >SHORT STORIES</a></h4>
+                  <p>Online</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-art wow fadeInUp">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/d.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/d.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('4');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >Desi Designer</a></h4>
+                  <p>Design a dress</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-literary wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/literaryonline.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/literaryonline.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('12');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >KILL'EM WITH KINDNESS</a></h4>
+                  <p>Online</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-art wow fadeInUp" data-wow-delay="0.2s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/f.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/f.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('5');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >Frame Your Vision</a></h4>
+                  <p>Exhibition of art and photographs</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-dramatics wow fadeInUp">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/s.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/s.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('23');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >STAND-UP COMEDY</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-literary wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/aippm.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/aippm.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('13');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >VSSUT AIPPM</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-art wow fadeInUp" data-wow-delay="0.2s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/s.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/s.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('6');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >Snap it</a></h4>
+                  <p>Capture Moments</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-literary wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/spellbee.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/spellbee.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('16');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >SPELL BEE</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-dramatics wow fadeInUp">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/i.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/i.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('22');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >IMPROV COMEDY</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-literary wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/picturesque.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/picturesque.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('17');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >PICTURESQUEUE</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-dramatics wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/m.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/m.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('21');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >MONO ACTION</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-literary wow fadeInUp" data-wow-delay="0.2s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/pikachu.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/pikachu.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('14');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >PIKACHU (Pick- Catch- U)</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-art wow fadeInUp" data-wow-delay="0.2s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/p.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/p.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('7');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >Picturesque</a></h4>
+                  <p>Online Photography Competition</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-literary wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/slam.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/slam.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('15');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >SLAM POETRY</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-dramatics wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/s.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/s.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('19');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a >STREET PLAY</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-literary wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/word.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/word.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('18');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >WORDMERISE</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-dramatics wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/nukkad.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/nukkad.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('20');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >NUKKAD NATAK</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-audiovisual wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/avc.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/avc.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('27');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >Dubsmash</a></h4>
+                  <p>Online</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-audiovisual wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/avc.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/avc.png" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('28');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >Musically</a></h4>
+                  <p>Online</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-audiovisual wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/avc.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/avc.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('29');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >LIKE</a></h4>
+                  <p>Online</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-audiovisual wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/drishya.jpg" class="img-fluid" alt="">
+                  <a href="img/events/drishya.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('30');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >DRISHYA</a></h4>
+                  <p>Online</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-audiovisual wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/p.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/p.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('31');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >PRANK VIDEOS</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-audiovisual wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/d.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/d.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('32');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >DUMB CHARADES</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-music wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/rocknrolla.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/rocknrolla.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('33');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >ROCK N ROLLA</a></h4>
+                  <p>Band War</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-music wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/sympony.jpeg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/sympony.jpeg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('34');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >SYMPHONY</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-music wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/v.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/v.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('35');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >VOICE OF VASSAUNT</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-music wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/exumb.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/exumb.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('36');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >EXUMBERENCE</a></h4>
+                  <p>Dance (Online)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-music wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/thebeat.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/thebeat.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('37');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >TO THE BEAT</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-quiz wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/quizzon.jpeg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/quizzon.jpeg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('41');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a>QUIZZON</a></h4>
+                  <p>Online</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-quiz wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/entertainmentQuiz.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/entertainmentQuiz.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('40');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a >ENTERTAINMENT QUIZ</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-quiz wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/COMIC123.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/COMIC123.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('38');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >COMICS QUIZ</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-quiz wow fadeInUp" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <figure>
+                  <img src="img/events/eventpage/warOfHostels.jpg" class="img-fluid" alt="">
+                  <a href="img/events/eventpage/warOfHostels.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details button" id="one" onclick="modalDataAllEvents('39');"  title="More Details"><i class="ion ion-information-circled"></i></a>
+                </figure>
+
+                <div class="portfolio-info">
+                  <h4><a  >WAR OF HOSTELS</a></h4>
+                  <p>Offline</p>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+        </div>
+      </section><!-- #portfolio -->
+
+
+    </main>
+
+    <a   class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+
+    <!-- JavaScript Libraries -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/superfish/hoverIntent.js"></script>
+    <script src="lib/superfish/superfish.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+    <!-- Template Main Javascript File -->
+
+<script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDsSas0uvgWWrjO840JbXnBUYG-ujTVz2Q",
+    authDomain: "vassaunt-2k18.firebaseapp.com",
+    databaseURL: "https://vassaunt-2k18.firebaseio.com",
+    projectId: "vassaunt-2k18",
+    storageBucket: "vassaunt-2k18.appspot.com",
+    messagingSenderId: "97015610638"
+  };
+  firebase.initializeApp(config);
+</script>
+    <script src="js/main-events.js"></script>
+    <script src="js/index-modal.js"></script>
+  </body>
+  </html>
